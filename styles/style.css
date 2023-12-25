@@ -1,0 +1,152 @@
+/*retira todas as margens e todos os espaçamentos dos elementos*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --cor-primaria: black;
+    --cor-secundaria: white;
+    --cor-terciaria:rgb(255, 113, 208);
+    --cor-quartenaria:rgb(241, 131, 57);
+
+    --fonte-primaria:'Krona One', sans-serif;
+    --fonte-secundaria:'Montserrat', sans-serif;
+}
+
+body {
+    /*height: 100vh; Serve para que toda a tela seja utilizada*/
+    box-sizing: border-box; /*Serve para que todos os elementos que estãoa contidos dentro do body, permaneçam ali, mesmo que seja inserida borda ou padding, o conteúdo será diminuído para que ele permaneça dentro da tag pai */
+    background-color: var(--cor-primaria);
+    color:var(--cor-secundaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 10%; /*ordem dos valores: superior → direito → inferior → esquerdo */
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    color: var(--cor-terciaria);
+    font-size: 1rem;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cabecalho__menu__link:hover{
+    color: var(--cor-quartenaria)
+}
+
+.titulo-destaque{
+    color:var(--cor-terciaria)
+}
+
+.apresentacao{
+    padding:2% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column; /*Coloca todos os elementos em coluna*/
+    gap: 40px; /* espaçamento entre os elementos*/
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 1.5rem; /*1 REM = 16 px, o Rem permite que quando as letras do navegador forem alterdas, as letras do site também serão alteradas*/
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__paragrafo{
+    font-size: 1.05rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__conteudo_botoes{
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.apresentacao__conteudo_botoes__botao{
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    border: 4px solid var(--cor-terciaria);
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 12px 0; /*padding → espaço entre o conteúdo e a borda, o primeiro valor se refere ao eixo vertical e o segundo ao eixo horizontal*/
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+}
+
+.apresentacao__conteudo_botoes__botao:hover{
+    border: 4px solid var(--cor-quartenaria)
+}
+
+.apresentacao__conteudo_botoes__subtitulo{
+    font-size: 1rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+}
+
+.apresentacao__conteudo_botoes__botao__icone__linkedin{
+    height: 20px;
+    width: 20px;
+}
+
+.apresentacao__conteudo_botoes__botao__icone__git{
+    height: 30px;
+    width: 30px;
+}
+
+.imagemDev{
+    width: 40%;
+}
+
+.rodape{
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    font-size: 1rem;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    text-align: center;
+    padding: 14px;
+}
+
+@media(max-width:725px) /*Serve para que enquanto estiver dentro da condição inserida dentro do parênteses, ele siga o estilo abaixo, diferente disso segue o estilo fora das chaves*/
+    {
+        .cabecalho{
+            padding:10%;
+        }
+
+        .cabecalho__menu{
+            justify-content: center;
+        }
+
+        .apresentacao{
+            flex-direction: column-reverse;
+            padding: 5%;
+        }
+
+        .apresentacao__conteudo{
+            width: auto;
+        }
+    }
